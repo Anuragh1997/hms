@@ -43,16 +43,3 @@ input[type=text], select
     border-radius: 4px;
     box-sizing: border-box;
   }
-  /*
-  img[alt="img2"]
-  {
-      height: 500px; 
-      width: 600px;
-  }
-  *
-  {
-    color: #4CAF50;
-    background-color: violet;
-    font-size: large;
-  } 
-  */
