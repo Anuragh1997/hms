@@ -23,3 +23,24 @@ def Lablist(request):
      return render(request,'lablist.html')
 def Report(request):
      return render(request,'labreports.html')
+def Pha(request):
+     return render(request,'addpha.html')
+def Phalist(request):
+     return render(request,'phalist.html')
+def Pres(request):
+     return render(request,'preslist.html')
+def Blood(request):
+     return render(request,'addblood.html')
+def Bldlist(request):
+     return render(request,'bloodlist.html')
+def Bldreq(request):
+     return render(request,'bloodrequest.html')
+def Viewreq(request):
+     return render(request,'bloodrequestview.html')
+def Viewdoc(request):
+     return render(request,'viewdoctor.html')
+def Viewdocapp(request):
+     return render(request,'viewappoinment.html')
+def Viewpati(request):
+     return render(request,'viewpatient.html')
+

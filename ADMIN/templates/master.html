@@ -68,6 +68,170 @@
     <script src="{% static 'admin_static/dist/js/demo.js' %}"></script>
 
     <script src="{% static 'admin_static/dist/js/pages/dashboard.js' %}"></script>
+   
+    
+
+    <script src="{% static 'admin_static/plugins/jquery/jquery.min.js' %}"></script>
+
+<script src="{% static 'admin_staticplugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'admin_staticplugins/sweetalert2/sweetalert2.min.js' %}"></script>
+
+<script src="{% static 'admin_staticplugins/toastr/toastr.min.js' %}"></script>
+<script>
+    $(function() {
+      var Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+  
+      $('.swalDefaultSuccess').click(function() {
+        Toast.fire({
+          icon: 'success',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.swalDefaultInfo').click(function() {
+        Toast.fire({
+          icon: 'info',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.swalDefaultError').click(function() {
+        Toast.fire({
+          icon: 'error',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.swalDefaultWarning').click(function() {
+        Toast.fire({
+          icon: 'warning',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.swalDefaultQuestion').click(function() {
+        Toast.fire({
+          icon: 'question',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+  
+      $('.toastrDefaultSuccess').click(function() {
+        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+      });
+      $('.toastrDefaultInfo').click(function() {
+        toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+      });
+      $('.toastrDefaultError').click(function() {
+        toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+      });
+      $('.toastrDefaultWarning').click(function() {
+        toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+      });
+  
+      $('.toastsDefaultDefault').click(function() {
+        $(document).Toasts('create', {
+          title: 'Toast Title',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultTopLeft').click(function() {
+        $(document).Toasts('create', {
+          title: 'Toast Title',
+          position: 'topLeft',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultBottomRight').click(function() {
+        $(document).Toasts('create', {
+          title: 'Toast Title',
+          position: 'bottomRight',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultBottomLeft').click(function() {
+        $(document).Toasts('create', {
+          title: 'Toast Title',
+          position: 'bottomLeft',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultAutohide').click(function() {
+        $(document).Toasts('create', {
+          title: 'Toast Title',
+          autohide: true,
+          delay: 750,
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultNotFixed').click(function() {
+        $(document).Toasts('create', {
+          title: 'Toast Title',
+          fixed: false,
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultFull').click(function() {
+        $(document).Toasts('create', {
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+          title: 'Toast Title',
+          subtitle: 'Subtitle',
+          icon: 'fas fa-envelope fa-lg',
+        })
+      });
+      $('.toastsDefaultFullImage').click(function() {
+        $(document).Toasts('create', {
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+          title: 'Toast Title',
+          subtitle: 'Subtitle',
+          image: '../../dist/img/user3-128x128.jpg',
+          imageAlt: 'User Picture',
+        })
+      });
+      $('.toastsDefaultSuccess').click(function() {
+        $(document).Toasts('create', {
+          class: 'bg-success',
+          title: 'Toast Title',
+          subtitle: 'Subtitle',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultInfo').click(function() {
+        $(document).Toasts('create', {
+          class: 'bg-info',
+          title: 'Toast Title',
+          subtitle: 'Subtitle',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultWarning').click(function() {
+        $(document).Toasts('create', {
+          class: 'bg-warning',
+          title: 'Toast Title',
+          subtitle: 'Subtitle',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultDanger').click(function() {
+        $(document).Toasts('create', {
+          class: 'bg-danger',
+          title: 'Toast Title',
+          subtitle: 'Subtitle',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.toastsDefaultMaroon').click(function() {
+        $(document).Toasts('create', {
+          class: 'bg-maroon',
+          title: 'Toast Title',
+          subtitle: 'Subtitle',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+    });
+  </script>
 
 
     <script src="{% static 'admin_static/plugins/datatables/jquery.dataTables.min.js' %}"></script>
@@ -100,7 +264,160 @@
           });
         });
       </script>
+<script>
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
 
+    $('.swalDefaultSuccess').click(function() {
+      Toast.fire({
+        icon: 'success',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.swalDefaultInfo').click(function() {
+      Toast.fire({
+        icon: 'info',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.swalDefaultError').click(function() {
+      Toast.fire({
+        icon: 'error',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.swalDefaultWarning').click(function() {
+      Toast.fire({
+        icon: 'warning',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.swalDefaultQuestion').click(function() {
+      Toast.fire({
+        icon: 'question',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+
+    $('.toastrDefaultSuccess').click(function() {
+      toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+    });
+    $('.toastrDefaultInfo').click(function() {
+      toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+    });
+    $('.toastrDefaultError').click(function() {
+      toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+    });
+    $('.toastrDefaultWarning').click(function() {
+      toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+    });
+
+    $('.toastsDefaultDefault').click(function() {
+      $(document).Toasts('create', {
+        title: 'Toast Title',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultTopLeft').click(function() {
+      $(document).Toasts('create', {
+        title: 'Toast Title',
+        position: 'topLeft',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultBottomRight').click(function() {
+      $(document).Toasts('create', {
+        title: 'Toast Title',
+        position: 'bottomRight',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultBottomLeft').click(function() {
+      $(document).Toasts('create', {
+        title: 'Toast Title',
+        position: 'bottomLeft',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultAutohide').click(function() {
+      $(document).Toasts('create', {
+        title: 'Toast Title',
+        autohide: true,
+        delay: 750,
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultNotFixed').click(function() {
+      $(document).Toasts('create', {
+        title: 'Toast Title',
+        fixed: false,
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultFull').click(function() {
+      $(document).Toasts('create', {
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+        title: 'Toast Title',
+        subtitle: 'Subtitle',
+        icon: 'fas fa-envelope fa-lg',
+      })
+    });
+    $('.toastsDefaultFullImage').click(function() {
+      $(document).Toasts('create', {
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+        title: 'Toast Title',
+        subtitle: 'Subtitle',
+        image: '../../dist/img/user3-128x128.jpg',
+        imageAlt: 'User Picture',
+      })
+    });
+    $('.toastsDefaultSuccess').click(function() {
+      $(document).Toasts('create', {
+        class: 'bg-success',
+        title: 'Toast Title',
+        subtitle: 'Subtitle',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultInfo').click(function() {
+      $(document).Toasts('create', {
+        class: 'bg-info',
+        title: 'Toast Title',
+        subtitle: 'Subtitle',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultWarning').click(function() {
+      $(document).Toasts('create', {
+        class: 'bg-warning',
+        title: 'Toast Title',
+        subtitle: 'Subtitle',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultDanger').click(function() {
+      $(document).Toasts('create', {
+        class: 'bg-danger',
+        title: 'Toast Title',
+        subtitle: 'Subtitle',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.toastsDefaultMaroon').click(function() {
+      $(document).Toasts('create', {
+        class: 'bg-maroon',
+        title: 'Toast Title',
+        subtitle: 'Subtitle',
+        body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+  });
+</script>
 
 
 
@@ -300,21 +617,56 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/tables/simple.html" class="nav-link">
+                                <a href="{% url 'addpha' %}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Add Pharmacy</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/tables/data.html" class="nav-link">
+                                <a href="{% url 'phlist' %}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Pharmacy List</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/tables/jsgrid.html" class="nav-link">
+                                <a href="{% url 'presli' %}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>View Prescription</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>
+                                Blood bank
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{% url 'addbld' %}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Add Bloodbank</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'bllist' %}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Bloodbank List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'blreq' %}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Blood Request</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'blreqv' %}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Blood Request view</p>
                                 </a>
                             </li>
                         </ul>

@@ -30,19 +30,39 @@
               <form id="quickForm">
                 <div class="card-body">
                   <div class="form-group">
+                    <label for="exampleInputtext1">Name</label>
+                    <input type="text" name="drname" class="form-control" id="exampleInputtext1" placeholder="Enter Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputtext2">Mobile Number</label>
+                    <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" placeholder="Enter Number">
+                  </div>
+                  <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                   </div>
+               
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="exampleInputEmail1">Department</label>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                          
+                          <select class="form-control">
+                            <option disabled selected>Department </option>
+                            <option value="Cardiologists">Cardiologists </option>
+                            <option value="Dermatologists">Dermatologists </option>
+                            <option value="Nephrologists">Nephrologists </option>
+                            <option value="Oncologists">Oncologists </option>
+                            <option value="Pediatricians">Pediatricians </option>
+                            <option value="Psychiatrists">Psychiatrists </option>
+                            <option value="General">General</option>
+          
+                          </select>
+                        </div>
+                      </div>
+                    
                   </div>
-                  <div class="form-group mb-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
-                      <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
-                    </div>
-                  </div>
+                  
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
