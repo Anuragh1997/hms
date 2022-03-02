@@ -43,4 +43,15 @@ def Viewdocapp(request):
      return render(request,'viewappoinment.html')
 def Viewpati(request):
      return render(request,'viewpatient.html')
+def Viewla(request):
+     return render(request,'viewlab.html')
+def Viewlabre(request):
+     return render(request,'viewlabreport.html')
+def Viewph(request):
+     return render(request,'viewpharmacy.html')
+def Viewre(request):
+     return render(request,'viewphreport.html')
+def Viewbl(request):
+     return render(request,'viewblood.html')
+
 

@@ -22,5 +22,11 @@ urlpatterns = [
     path('bloodreqview',views.Viewreq,name="blreqv"),
     path('viewdoctor',views.Viewdoc,name="viewdr"),
     path('viewdoctorapp',views.Viewdocapp,name="viewapp"),
-    path('viewpatient',views.Viewpati,name="viewpat")
+    path('viewpatient',views.Viewpati,name="viewpat"),
+    path('viewlabo',views.Viewla,name="viewlab"),
+    path('viewreport',views.Viewlabre,name="viewlabreport"),
+    path('viewphar',views.Viewph,name="viewpha"),
+    path('viewpharre',views.Viewre,name="viewpresdetailed"),
+    path('viewblood',views.Viewbl,name="viewbld")
+    
 ]

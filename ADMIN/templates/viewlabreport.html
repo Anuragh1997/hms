@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add Blood bank</h1>
+            <h1>View Detailed report</h1>
           </div>
      
         </div>
@@ -23,32 +23,39 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add</h3>
+                <h3 class="card-title">View</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form id="quickForm">
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputtext1">Name</label>
-                    <input type="text" name="blname" class="form-control" id="exampleInputtext1" placeholder="Enter Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputtext2"> Number</label>
-                    <input type="number" name="blnumber" class="form-control" id="exampleInputtext2" placeholder="Enter Number">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputtext2">Details</label>
-                    <input type="text" name="bldet" class="form-control" id="exampleInputtext3" placeholder="Enter Details">
-                  </div>
-               
-                 
+                    <div class="form-group">
+                      <label for="exampleInputtext1">Patient Name</label>
+                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputtext2">Patient Number</label>
+                      <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" value="9048798538" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputtext1"> Name</label>
+                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputtext1"> File</label>
+                      <iframe src="file_name.pdf" style="width: 100%;height: 100%;border: none;"></iframe>
+                    </div>
                   
-                </div>
+                  
+                    
+                  </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                 
+                  
+                 
                 </div>
+                
               </form>
             </div>
             <!-- /.card -->
