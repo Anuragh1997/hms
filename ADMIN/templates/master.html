@@ -29,9 +29,9 @@
     <link rel="stylesheet" href="{% static 'admin_static/plugins/daterangepicker/daterangepicker.css' %}">
 
     <link rel="stylesheet" href="{% static 'admin_static/plugins/summernote/summernote-bs4.min.css' %}">
-    <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
-    <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
-    <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_static/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_static/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_static/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
 
 
 
@@ -73,11 +73,11 @@
 
     <script src="{% static 'admin_static/plugins/jquery/jquery.min.js' %}"></script>
 
-<script src="{% static 'admin_staticplugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'admin_static/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-<script src="{% static 'admin_staticplugins/sweetalert2/sweetalert2.min.js' %}"></script>
+<script src="{% static 'admin_static/plugins/sweetalert2/sweetalert2.min.js' %}"></script>
 
-<script src="{% static 'admin_staticplugins/toastr/toastr.min.js' %}"></script>
+<script src="{% static 'admin_static/plugins/toastr/toastr.min.js' %}"></script>
 <script>
     $(function() {
       var Toast = Swal.mixin({
@@ -479,7 +479,7 @@
     </nav>
     <aside class="main-sidebar sidebar-dark-primary elevation-4" style=" height: 1000px;">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="{% url 'addash' %}" class="brand-link">
             <img src="{% static 'hmslogo.jpg' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                 style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
