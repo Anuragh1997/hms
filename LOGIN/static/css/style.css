@@ -43,23 +43,7 @@ input[type=text], select
     border-radius: 4px;
     box-sizing: border-box;
   }
-  .log
-{
-    
-
-    height: 50%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    align-items: center;
-    padding-top: 100px;
-    padding-bottom: 140px;
-    
-    
-    
-    
-    
-}
+  
   /*
   img[alt="img2"]
   {

@@ -1,0 +1,80 @@
+{% extends 'bldmaster.html' %}
+{% block content %}
+{% load static %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Recieved List</h1>
+          </div>
+         
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+           
+            <div class="card">
+            
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Donor Name</th>
+                    <th>Mobile</th>
+                    <th>Group</th>
+                    <th>Unit</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Anuragh</td>
+                    <td>9048798538</td>
+                    <td>A+</td>
+                    <td>1</td>
+                    <td>10/03/1997</td>
+                   <td><button class="btn btn-danger">Delete</button></td> 
+                  </tr>
+                  <tr>
+                    <td>Anuragh</td>
+                    <td>9048798538</td>
+                    <td>A+</td>
+                    <td>1</td>
+                    <td>10/03/1997</td>
+                   <td><button class="btn btn-danger">Delete</button></td> 
+                  </tr>
+                  <tr>
+                    <td>Anuragh</td>
+                    <td>9048798538</td>
+                    <td>A+</td>
+                    <td>1</td>
+                    <td>10/03/1997</td>
+                   <td><button class="btn btn-danger">Delete</button></td> 
+                  </tr>
+                  
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  {% endblock %}

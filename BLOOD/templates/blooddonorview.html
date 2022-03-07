@@ -1,0 +1,178 @@
+{% extends 'bldmaster.html' %}
+{% block content %}
+{% load static %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>View Donor</h1>
+          </div>
+     
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">View</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form id="quickForm">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputtext1">Name</label>
+                    <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputtext2">Mobile Number</label>
+                    <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" value="9048798538" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="anuraghnnair@gmail.com" disabled>
+                  </div>
+               
+                  <div class="form-group">
+                    <label for="exampleInputtext3">Addres</label>
+                    <input type="text" name="ptaddress" class="form-control" id="exampleInputtext3" value="calicut" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">District</label>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                          
+                          <select class="form-control" disabled>
+                           <!--<option disabled >District </option> --> 
+                            <option value="Kozhikode" selected>Kozhikode </option>
+                            <option value="Eranamkulam">Eranamkulam </option>
+                            
+          
+                          </select>
+                        </div>
+                      </div>
+                    
+                  </div>
+                  
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-xl">
+                    Edit
+                  </button>
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                  
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-lg">Add Blood</button>
+                   
+                 
+                </div>
+                <div class="modal fade" id="modal-xl">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Edit </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="card-body">
+                          <div class="form-group">
+                            <label for="exampleInputtext1">Name</label>
+                            <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" >
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputtext2">Mobile Number</label>
+                            <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" value="9048798538" >
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="anuraghnnair@gmail.com" >
+                          </div>
+                       
+                          <div class="form-group">
+                            <label for="exampleInputtext3">Addres</label>
+                            <input type="text" name="ptaddress" class="form-control" id="exampleInputtext3" value="calicut">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                  
+                                  <select class="form-control" >
+                                    <option disabled >District </option> 
+                                    <option value="Kozhikode" selected>Kozhikode </option>
+                                    <option value="Eranamkulam">Eranamkulam </option>
+                                    
+                  
+                                  </select>
+                                </div>
+                              </div>
+                            
+                          </div>
+                          
+                        </div>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+                <div class="modal fade" id="modal-lg">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Add </h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card-body">
+                            <div class="form-group">
+                              <label for="exampleInputtext1">Date</label>
+                              <input type="date" name="drname" class="form-control" id="exampleInputtext1"   >
+                            </div>
+                         
+                            
+                          </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+              </form>
+            </div>
+            <!-- /.card -->
+            </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-6">
+
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  {% endblock %}

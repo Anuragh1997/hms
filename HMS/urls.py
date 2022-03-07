@@ -21,5 +21,7 @@ urlpatterns = [
     path('',include('LOGIN.urls')),
     path('aadmin/',include('ADMIN.urls')),
     path('lab/',include('LABORATORY.urls')),
-    path('pha/',include('PHARMACY.urls'))
+    path('pha/',include('PHARMACY.urls')),
+    path('doc/',include('DOCTOR.urls')),
+    path('bld/',include('BLOOD.urls'))
 ]

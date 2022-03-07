@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'LABORATORY',
     'LOGIN',
     'PATIENT',
-    'PHARMACY'
+    'PHARMACY',
+    'BLOOD'
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
     os.path.join(BASE_DIR,'ADMIN/static'),
     os.path.join(BASE_DIR,'LABORATORY/static'),
-    os.path.join(BASE_DIR,'PHARMACY/static')
+    os.path.join(BASE_DIR,'PHARMACY/static'),
+    os.path.join(BASE_DIR,'DOCTOR/static'),
+    os.path.join(BASE_DIR,'BLOOD/static')
 
 ]
 

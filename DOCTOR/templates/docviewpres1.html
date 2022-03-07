@@ -1,0 +1,96 @@
+{% extends 'docmaster.html' %}
+{% block content %}
+{% load static %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Prescription list</h1>
+          </div>
+         
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+           
+            <div class="card">
+            
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                   
+                    <th>Patient Name</th>
+                    <th>Patient Number</th>
+                    <th>Prescription</th>
+                    <th>Status</th>
+                   
+                    <th>Date</th>
+                  
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                   
+                    <td>Anuragh</td>
+                    <td>9048798538</td>
+                    <td>anuraghnnair@gmail.com</td>
+                    <td><span class="badge bg-danger">Pending</span></td>
+                    <td>20/45/47</td>
+                    
+                   <td><a href="{% url 'docpresdet1' %}" type="button" class="btn btn-primary">View</a>
+                <button class="btn btn-danger">Delete</button></td> 
+                  </tr>
+                  <tr>
+                   
+                    <td>Anuragh</td>
+                    <td>9048798538</td>
+                    
+                    <td>anuraghnnair@gmail.com</td>
+                    <td><span class="badge bg-danger">Pending</span></td>
+                    <td>20/45/47</td>
+                    
+                   <td><a href="{% url 'docpresdet1' %}" type="button" class="btn btn-primary">View</a>
+                    <button class="btn btn-danger">Delete</button></td> 
+                  </tr>
+                  <tr>
+                   
+                    <td>Anuragh</td>
+                    <td>9048798538</td>
+                    
+                    <td>anuraghnnair@gmail.com</td>
+                    <td><span class="badge bg-danger">Pending</span></td>
+                    <td>20/45/47</td>
+                    
+                   <td><a href="{% url 'docpresdet1' %}" type="button" class="btn btn-primary">View</a>
+                    <button class="btn btn-danger">Delete</button>
+                </td> 
+                  </tr>
+                  
+                  
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  {% endblock %}
