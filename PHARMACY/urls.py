@@ -3,13 +3,13 @@ from . import views
 
 urlpatterns = [
     
-    path('phadashboard',views.Pdash,name="addashpha"),
-    path('phaview',views.Pview123,name="viewpha"),
-    path('phapatlist',views.Patviewph,name="viewphapt"),
-    path('phapatview',views.Patviewphd,name="viewphaptd"),
-    path('phapreslist',views.Phapres,name="viewpres"),
-    path('phapreslistdet',views.Phapresdet,name="viewpresdet"),
-    path('phaprespat',views.Phaprespat,name="viewprepat")
+    path('phadashboard',views.pharmacydash,name="addashpha"),
+    path('phaview',views.pharmacyview123,name="viewpha"),
+    path('phapatlist',views.viewpatient,name="viewphapt"),
+    path('phapatview',views.viewpatientdet,name="viewphaptd"),
+    path('phapreslist',views.preslist,name="viewpres"),
+    path('phapreslistdet',views.presdetailview,name="viewpresdet"),
+    path('phaprespat',views.viewprespatient,name="viewprepat")
     
     
     

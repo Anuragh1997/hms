@@ -1,25 +1,35 @@
 from django.shortcuts import render
 
 # Create your views here.
-def Ddash(request):
+def doctordash(request):
      return render(request,'docdashboard.html')
-def Dview(request):
+
+def doctorview(request):
      return render(request,'docview.html')
-def Dviewapp(request):
+
+def docviewapp(request):
      return render(request,'docviewapp.html')
-def Dviewappdet(request):
+
+def dovviewappdet(request):
      return render(request,'docviewappdet.html')
-def Dviewlab(request):
+
+def dviewlab(request):
      return render(request,'doclabreports.html')
-def Dviewpres(request):
+
+def dviewpres(request):
      return render(request,'docviewpres.html')
-def Dviewlabdet(request):
+
+def dviewlabdet(request):
      return render(request,'docviewlabdetail.html')
-def Dviewpresdet(request):
+
+def dviewpresdet(request):
      return render(request,'docviewpresdetail.html')
-def Dviewpat(request):
+
+def dviewpatient(request):
      return render(request,'docviewpat.html')
-def Dviewpres1(request):
+
+def dviewprescription1(request):
      return render(request,'docviewpres1.html')
-def Dviewpresdet1(request):
+     
+def dviewpresdetail1(request):
      return render(request,'docviewpresdet1.html')

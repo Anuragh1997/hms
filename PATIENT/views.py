@@ -1,23 +1,32 @@
 from django.shortcuts import render
 
 # Create your views here.
-def Pdash(request):
+def patientdash(request):
      return render(request,'patdashboard.html')
-def Pview1(request):
+
+def patientview1(request):
      return render(request,'patview.html')
-def Papp(request):
+
+def patientapp(request):
      return render(request,'patfixapp.html')
-def Papplist(request):
+
+def patientapplist(request):
      return render(request,'patapplist.html')
-def Plabr1(request):
+
+def patientlabr1(request):
      return render(request,'patlabreorts.html')
-def Plabd(request):
+
+def patientlabdet(request):
      return render(request,'patlabdetail.html')
-def Ppresl(request):
+
+def patientpresl(request):
      return render(request,'patpreslist.html')
-def Ppresdet(request):
+
+def patientpresdet(request):
      return render(request,'patpresdetail.html')
-def Pbloodreq(request):
+
+def patientbloodreq(request):
      return render(request,'patbldreq.html')
-def Pbloodreqv(request):
+     
+def patientbloodreqv(request):
      return render(request,'patbldreqview.html')

@@ -1,21 +1,29 @@
 from django.shortcuts import render
 
 # Create your views here.
-def Bdash(request):
+def blooddash(request):
      return render(request,'blddashboard.html')
-def Bview(request):
+
+def bldview(request):
      return render(request,'bloodview.html')
-def Bdonor(request):
+
+def addblddonor(request):
      return render(request,'blooddonor.html')
-def Bdlist(request):
+
+def bdonorlist(request):
      return render(request,'blooddonorlist.html')
-def Bdview(request):
+
+def bdonorview(request):
      return render(request,'blooddonorview.html')
-def Breq(request):
+
+def bldreq(request):
      return render(request,'bloodrequest1.html')
-def Breqview(request):
+
+def breqview(request):
      return render(request,'bloodrequestview1.html')
-def Brecli(request):
+
+def bldreqlist(request):
      return render(request,'bloodreclist.html')
-def Bdelli(request):
+
+def bldelivered(request):
      return render(request,'blooddellist.html')

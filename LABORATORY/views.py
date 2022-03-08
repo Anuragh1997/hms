@@ -1,19 +1,26 @@
 from django.shortcuts import render
 
 # Create your views here.
-def Ldash(request):
+def labdash(request):
      return render(request,'labdashboard.html')
-def Lview(request):
+
+def labview(request):
      return render(request,'viewlab1.html')
-def Lviewp(request):
+
+def labviewpatient(request):
      return render(request,'viewlabpat.html')
-def Lviewpa(request):
+
+def labviewpat(request):
      return render(request,'viewlabpatient.html')
-def Lviewre(request):
+
+def labviewreport(request):
      return render(request,'viewlabreports.html')
-def Lviewrede(request):
+
+def labviewrede(request):
      return render(request,'viewlabreportsdetail.html')
-def Lviewrept(request):
+
+def labviewrept(request):
      return render(request,'viewlabreportold.html')
-def Lviewreold(request):
+     
+def labviewreold(request):
      return render(request,'viewlabreportoldview.html')

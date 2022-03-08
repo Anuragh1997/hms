@@ -1,57 +1,82 @@
 from django.shortcuts import render
 
 # Create your views here.
-def Log(request):
+def login(request):
      return render(request,'adminlogin.html')
-def Dash(request):
+
+def dashboard(request):
      return render(request,'admindashboard.html')
-def Doc(request):
+
+def adddoctor(request):
      return render(request,'adddoctor.html')
-def Doclist(request):
+
+def doctorlist(request):
      return render(request,'doctorlist.html')
-def Appoinment(request):
+
+def addappoinment(request):
      return render(request,'addappoinment.html')
-def Appoinmentlist1(request):
+
+def appoinmentlist1(request):
      return render(request,'appoinmentlist.html')
-def Pat(request):
+
+def addpatient(request):
      return render(request,'addpatient.html')
-def Patlist(request):
+
+def patlist(request):
      return render(request,'patientlist.html')
-def Lab(request):
+
+def lab(request):
      return render(request,'addlab.html')
-def Lablist(request):
+
+def lablist(request):
      return render(request,'lablist.html')
-def Report(request):
+
+def labreport(request):
      return render(request,'labreports.html')
-def Pha(request):
+
+def pharmacy(request):
      return render(request,'addpha.html')
-def Phalist(request):
+
+def phalist(request):
      return render(request,'phalist.html')
-def Pres(request):
+
+def prescription(request):
      return render(request,'preslist.html')
-def Blood(request):
+
+def blood(request):
      return render(request,'addblood.html')
-def Bldlist(request):
+
+def bldlist(request):
      return render(request,'bloodlist.html')
-def Bldreq(request):
+
+def bldreq(request):
      return render(request,'bloodrequest.html')
-def Viewreq(request):
+
+def viewreq(request):
      return render(request,'bloodrequestview.html')
-def Viewdoc(request):
+
+def viewdoc(request):
      return render(request,'viewdoctor.html')
-def Viewdocapp(request):
+
+def viewdocapp(request):
      return render(request,'viewappoinment.html')
-def Viewpati(request):
+
+def viewpatient(request):
      return render(request,'viewpatient.html')
-def Viewla(request):
+
+def viewlab(request):
      return render(request,'viewlab.html')
-def Viewlabre(request):
+
+def viewlabrep(request):
      return render(request,'viewlabreport.html')
-def Viewph(request):
+
+def viewpharmacy(request):
      return render(request,'viewpharmacy.html')
-def Viewre(request):
+
+def viewphre(request):
      return render(request,'viewphreport.html')
-def Viewbl(request):
+     
+def viewbld(request):
      return render(request,'viewblood.html')
 
 

@@ -3,16 +3,16 @@ from . import views
 
 urlpatterns = [
     
-    path('patdashboard',views.Pdash,name="addashpat"),
-    path('patview',views.Pview1,name="pview"),
-    path('patfixappoinment',views.Papp,name="pfapp"),
-    path('patlistapp',views.Papplist,name="pfapplist"),
-    path('patlabrep',views.Plabr1,name="plabrep"),
-    path('patlabdet',views.Plabd,name="prepd"),
-    path('patpreslist',views.Ppresl,name="preli"),
-    path('patpresview',views.Ppresdet,name="predet"),
-    path('patbloodreq',views.Pbloodreq,name="pblreq"),
-    path('patbloodreqview',views.Pbloodreqv,name="pblreqv")
+    path('patdashboard',views.patientdash,name="addashpat"),
+    path('patview',views.patientview1,name="pview"),
+    path('patfixappoinment',views.patientapp,name="pfapp"),
+    path('patlistapp',views.patientapplist,name="pfapplist"),
+    path('patlabrep',views.patientlabr1,name="plabrep"),
+    path('patlabdet',views.patientlabdet,name="prepd"),
+    path('patpreslist',views.patientpresl,name="preli"),
+    path('patpresview',views.patientpresdet,name="predet"),
+    path('patbloodreq',views.patientbloodreq,name="pblreq"),
+    path('patbloodreqview',views.patientbloodreqv,name="pblreqv")
     
     
 ]
