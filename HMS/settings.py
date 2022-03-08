@@ -130,7 +130,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'LABORATORY/static'),
     os.path.join(BASE_DIR,'PHARMACY/static'),
     os.path.join(BASE_DIR,'DOCTOR/static'),
-    os.path.join(BASE_DIR,'BLOOD/static')
+    os.path.join(BASE_DIR,'BLOOD/static'),
+    os.path.join(BASE_DIR,'PATIENT/static')
 
 ]
 

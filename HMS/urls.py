@@ -23,5 +23,6 @@ urlpatterns = [
     path('lab/',include('LABORATORY.urls')),
     path('pha/',include('PHARMACY.urls')),
     path('doc/',include('DOCTOR.urls')),
-    path('bld/',include('BLOOD.urls'))
+    path('bld/',include('BLOOD.urls')),
+    path('pat/',include('PATIENT.urls'))
 ]
