@@ -70,8 +70,8 @@ def viewlab(request):
 def viewlabrep(request):
      return render(request,'viewlabreport.html')
 
-def viewpharmacy(request):
-     return render(request,'viewpharmacy.html')
+def viewpharmacy1(request):
+     return render(request,'viewpharmacy1.html')
 
 def viewphre(request):
      return render(request,'viewphreport.html')

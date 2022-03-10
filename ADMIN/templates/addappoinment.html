@@ -65,7 +65,7 @@
                     <label for="exampleInputdate">Date</label>
                     <input type="date" name="apdate" class="form-control" id="exampleInputdate" placeholder="date">
                   </div>
-                  
+                
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -87,4 +87,13 @@
     </section>
     <!-- /.content -->
   </div>
+  
+  <script>
+
+    //Timepicker
+    $('#timepicker').datetimepicker({
+      format: 'LT'
+    })
+
+  </script>
   {% endblock %}

@@ -25,7 +25,7 @@ urlpatterns = [
     path('viewpatient',views.viewpatient,name="viewpat"),
     path('viewlabo',views.viewlab,name="viewlab"),
     path('viewreport',views.viewlabrep,name="viewlabreport"),
-    path('viewphar',views.viewpharmacy,name="viewpha"),
+    path('viewphar1',views.viewpharmacy1,name="viewpha1"),
     path('viewpharre',views.viewphre,name="viewpresdetailed"),
     path('viewblood',views.viewbld,name="viewbld")
     
