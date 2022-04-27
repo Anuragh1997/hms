@@ -11,7 +11,8 @@ urlpatterns = [
     path('bloodrequest',views.bldreq,name="bldreq"),
     path('bloodrequestview',views.breqview,name="bldreqvi"),
     path('bloodreclist',views.bldreqlist,name="bldrec"),
-    path('blooddellist',views.bldelivered,name="blddel")
+    path('blooddellist',views.bldelivered,name="blddel"),
+    path('l_out',views.blogout,name="lout")
    
     
 ]

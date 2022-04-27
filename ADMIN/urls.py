@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('login',views.login),
+    path('login',views.login,name="log"),
     path('dashboard',views.dashboard,name="addash"),
     path('adddoc',views.adddoctor,name="addoc"),
     path('doclist',views.doctorlist,name="doctlist"),
@@ -20,13 +20,15 @@ urlpatterns = [
     path('bloodlist',views.bldlist,name="bllist"),
     path('bloodreq',views.bldreq,name="blreq"),
     path('bloodreqview',views.viewreq,name="blreqv"),
-    path('viewdoctor',views.viewdoc,name="viewdr"),
+    path('viewdoctor/<int:id>',views.viewdoc,name="viewdr"),
     path('viewdoctorapp',views.viewdocapp,name="viewapp"),
-    path('viewpatient',views.viewpatient,name="viewpat"),
-    path('viewlabo',views.viewlab,name="viewlab"),
+    path('viewpatient/<int:id>',views.viewpatient,name="viewpat"),
+    path('viewlabo/<int:id>',views.viewlab,name="viewlab"),
     path('viewreport',views.viewlabrep,name="viewlabreport"),
-    path('viewphar1',views.viewpharmacy1,name="viewpha1"),
+    path('viewphar1/<int:id>',views.viewpharmacy1,name="viewpha1"),
     path('viewpharre',views.viewphre,name="viewpresdetailed"),
-    path('viewblood',views.viewbld,name="viewbld")
+    path('viewblood/<int:id>',views.viewbld,name="viewbld"),
+    path('logout',views.adminlogout,name="log_out"),
+    path('checkuser',views.drcheck,name="check_dr")
     
 ]

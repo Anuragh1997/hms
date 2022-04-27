@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from DOCTOR.decorates import auth_login
 
 # Create your views here.
+@auth_login
 def doctordash(request):
      return render(request,'docdashboard.html')
 
@@ -33,3 +35,7 @@ def dviewprescription1(request):
      
 def dviewpresdetail1(request):
      return render(request,'docviewpresdet1.html')
+def logout(request):
+    del request.session['user_id']
+    request.session.flush()
+    return redirect('log1')

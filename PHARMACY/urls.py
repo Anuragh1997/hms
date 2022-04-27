@@ -9,7 +9,8 @@ urlpatterns = [
     path('phapatview',views.viewpatientdet,name="viewphaptd"),
     path('phapreslist',views.preslist,name="viewpres"),
     path('phapreslistdet',views.presdetailview,name="viewpresdet"),
-    path('phaprespat',views.viewprespatient,name="viewprepat")
+    path('phaprespat',views.viewprespatient,name="viewprepat"),
+    path('log_out',views.phlogout,name="phout")
     
     
     

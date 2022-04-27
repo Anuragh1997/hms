@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from DOCTOR.decorates import auth_login
 
 # Create your views here.
+@auth_login
 def blooddash(request):
      return render(request,'blddashboard.html')
 
@@ -27,3 +29,7 @@ def bldreqlist(request):
 
 def bldelivered(request):
      return render(request,'blooddellist.html')
+def blogout(request):
+    del request.session['user_id']
+    request.session.flush()
+    return redirect('log1')

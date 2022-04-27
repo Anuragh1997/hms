@@ -36,30 +36,16 @@
                   </tr>
                   </thead>
                   <tbody>
+                    {% for i in list %}
                   <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>Calicut</td>
-                    <td>kozhikode</td>
-                   <td><a href="{% url 'viewpat' %}" type="button" class="btn btn-primary">View</a></td> 
+                    <td>{{i.p_name}}</td>
+                    <td>{{i.p_mob}}</td>
+                    <td>{{i.p_email}}</td>
+                    <td>{{i.p_address}}</td>
+                    <td>{{i.p_district}}</td>
+                   <td><a href="{% url 'viewpat' i.id %}" type="button" class="btn btn-primary">View</a></td> 
                   </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>Calicut</td>
-                    <td>kozhikode</td>
-                   <td><a href="{% url 'viewpat' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>Calicut</td>
-                    <td>kozhikode</td>
-                   <td><a href="{% url 'viewpat' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
+                  {% endfor %}
                   
                   </tbody>
                   

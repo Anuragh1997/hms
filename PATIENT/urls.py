@@ -12,7 +12,8 @@ urlpatterns = [
     path('patpreslist',views.patientpresl,name="preli"),
     path('patpresview',views.patientpresdet,name="predet"),
     path('patbloodreq',views.patientbloodreq,name="pblreq"),
-    path('patbloodreqview',views.patientbloodreqv,name="pblreqv")
+    path('patbloodreqview',views.patientbloodreqv,name="pblreqv"),
+    path('log_out',views.plogout,name="pout")
     
     
 ]

@@ -6,24 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HMS</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'download.png' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 <body>
-  <form action="" method="post">
+  <form id="quickForm" action="" method="POST">
+    {% csrf_token %}
     <div>
       <center>  <img src="{% static 'admin_static/hmslogo.jpg' %}" width="400" alt="img1" style="padding-left: 80px;">  </center>
     </div>
    
     <div  align="center" valign="center" >
       <label for=""><b class="p">Username</b></label>
-      <input type="text" placeholder="Enter Username">
+      <input type="text" placeholder="Enter Username" name="username">
       <br><br>
   
       <label for=""><b class="p">Password</b></label>
-      <input type="password" placeholder="Enter Password" >
+      <input type="password" placeholder="Enter Password" name="pass" >
       <br><br>
-  
+      <span style="color:red">{{err_msg}}</span>
       <button type="submit" class="btn" style="margin-left: 80px;" >Login</button>
       <br><br>
       

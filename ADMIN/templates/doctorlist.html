@@ -35,27 +35,18 @@
                   </tr>
                   </thead>
                   <tbody>
+                    {% for i in list %}
+                  
                   <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>General</td>
-                   <td><a href="{% url 'viewdr' %}" type="button" class="btn btn-primary">View</a></td> 
+                    <td>{{i.d_name}}</td>
+                    <td>{{i.d_mob}}</td>
+                    <td>{{i.d_email}}</td>
+                    <td>{{i.d_department}}</td>
+                   <td><a href="{% url 'viewdr' i.id %}" type="submit" class="btn btn-primary">View</a></td> 
+                   
                   </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>General</td>
-                   <td><a href="{% url 'viewdr' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>General</td>
-                   <td><a href="{% url 'viewdr' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
+                  
+                  {% endfor %}
                   
                   </tbody>
                   

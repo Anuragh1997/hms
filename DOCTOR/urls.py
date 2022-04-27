@@ -13,7 +13,8 @@ urlpatterns = [
     path('viewoldpresdet',views.dviewpresdet,name="docpapresdet"),
     path('viewpat',views.dviewpatient,name="docpat"),
     path('viewpres',views.dviewprescription1,name="docpres"),
-    path('viewpresdet',views.dviewpresdetail1,name="docpresdet1")
+    path('viewpresdet',views.dviewpresdetail1,name="docpresdet1"),
+    path('log_out',views.logout,name="out")
     
     
     

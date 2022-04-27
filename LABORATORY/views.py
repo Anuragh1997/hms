@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from DOCTOR.decorates import auth_login
 
 # Create your views here.
+@auth_login
 def labdash(request):
      return render(request,'labdashboard.html')
 
@@ -24,3 +26,7 @@ def labviewrept(request):
      
 def labviewreold(request):
      return render(request,'viewlabreportoldview.html')
+def llogout(request):
+    del request.session['user_id']
+    request.session.flush()
+    return redirect('log1')

@@ -27,44 +27,32 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm">
+              <form id="quickForm" action="" method="POST">
+                {% csrf_token %}
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputtext1">Name</label>
-                    <input type="text" name="drname" class="form-control" id="exampleInputtext1" placeholder="Enter Name" value="anuragh" disabled>
+                    <input type="text" class="form-control" id="exampleInputtext1"  value="{{details.p_name}}" disabled>
                   </div></div>
                   <div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputtext2">Mobile Number</label>
-                    <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" placeholder="Enter Number" value="9048798538" disabled>
+                    <input type="number"  class="form-control" id="exampleInputtext2"  value="{{details.p_mob}}" disabled>
                   </div></div></div>
                   <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputtext1">Address</label>
-                      <input type="text" name="drname" class="form-control" id="exampleInputtext1" placeholder="Enter Name" value="calicut" disabled>
+                      <input type="text" class="form-control" id="exampleInputtext1"  value="{{details.p_address}}" disabled>
                     </div></div>
                     <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputtext2">District</label>
                       <select class="form-control" disabled>
-                        <option disabled selected>District </option>
-                        <option value="Thiruvananthapuram">Thiruvananthapuram </option>
-                        <option value="Kollam">Kollam </option>
-                        <option value="Pathanamthitta">Pathanamthitta </option>
-                        <option value="Alappuzha">Alappuzha </option>
-                        <option value="Kottayam">Kottayam </option>
-                        <option value="Idukki">Idukki </option>
-                        <option value="Ernakulam">Ernakulam</option>
-                        <option value="Thrissur">Thrissur </option>
-                        <option value="Palakkad">Palakkad </option>
-                        <option value="Malappuram">Malappuram </option>
-                        <option value="Kozhikode">Kozhikode </option>
-                        <option value="Wauyanad">Wauyanad </option>
-                        <option value="Kannur">Kannur </option>
-                        <option value="Kasargod">Kasargod</option>
+                        <option disabled selected>{{details.p_district}} </option>
+                       
       
                       </select>
                     </div></div></div>
@@ -72,26 +60,31 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="anuraghnnair@gmail.com" disabled>
+                          <input type="email"  class="form-control" id="exampleInputEmail1"  value="{{details.p_email}}" disabled>
                         </div></div>
                     <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputtext2">DOB</label>
-                      <input type="date" name="drnumber" class="form-control" id="exampleInputtext2" placeholder="Enter Number" value="anuragh" disabled>
+                      <input type="date"  class="form-control" id="exampleInputtext2"  value="{{details.p_dob}}" disabled>
                     </div></div></div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="exampleInputtext1">Age</label>
-                          <input type="number" name="drname" class="form-control" id="exampleInputtext1" placeholder="Enter Name" value="25" disabled>
+                          <input type="number"  class="form-control" id="exampleInputtext1"  value="{{details.p_age}}" disabled>
                         </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Gender</label>
                       <br>
-                        <input type="radio" name="gender" value="male" disabled>Male
-                        <input type="radio" name="gender" value="male" disabled>Female
+                      {% if details.p_gender == 'male' %}
+                      <input type="radio"  value="male"  disabled >Male
+                     
+                    {% else %}
+                   
+                    <input type="radio"  value="female"  disabled>Female
+                    {% endif %}
                        
                       </div>
                 </div>
@@ -103,7 +96,7 @@
                   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-xl">
                     Edit
                   </button>
-                  <button type="submit" class="btn btn-danger">Delete</button>
+                  <button type="submit" class="btn btn-danger" name="del">Delete</button>
                   
                  
                 </div>
@@ -122,24 +115,24 @@
                             <div class="col-md-6">
                           <div class="form-group">
                             <label for="exampleInputtext1">Name</label>
-                            <input type="text" name="drname" class="form-control" id="exampleInputtext1" placeholder="Enter Name" value="anuragh" >
+                            <input type="text" name="pname" class="form-control" id="exampleInputtext1"  value="{{details.p_name}}" >
                           </div></div>
                           <div class="col-md-6">
                           <div class="form-group">
                             <label for="exampleInputtext2">Mobile Number</label>
-                            <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" placeholder="Enter Number" value="9048798538" >
+                            <input type="number" name="pnumber" class="form-control" id="exampleInputtext2"  value="{{details.p_mob}}" >
                           </div></div></div>
                           <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="exampleInputtext1">Address</label>
-                              <input type="text" name="drname" class="form-control" id="exampleInputtext1" placeholder="Enter Name" value="calicut" >
+                              <input type="text" name="paddress" class="form-control" id="exampleInputtext1"  value="{{details.p_address}}" >
                             </div></div>
                             <div class="col-md-6">
                             <div class="form-group">
                               <label for="exampleInputtext2">District</label>
-                              <select class="form-control" >
-                                <option disabled selected>District </option>
+                              <select class="form-control" name="pdis">
+                                <option  selected>{{details.p_district}} </option>
                                 <option value="Thiruvananthapuram">Thiruvananthapuram </option>
                                 <option value="Kollam">Kollam </option>
                                 <option value="Pathanamthitta">Pathanamthitta </option>
@@ -154,6 +147,7 @@
                                 <option value="Wauyanad">Wauyanad </option>
                                 <option value="Kannur">Kannur </option>
                                 <option value="Kasargod">Kasargod</option>
+                                
               
                               </select>
                             </div></div></div>
@@ -161,26 +155,32 @@
                               <div class="col-md-6">
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Email address</label>
-                                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="anuraghnnair@gmail.com" >
+                                  <input type="email" name="pemail" class="form-control" id="exampleInputEmail1"  value="{{details.p_email}}" >
                                 </div></div>
                             <div class="col-md-6">
                             <div class="form-group">
                               <label for="exampleInputtext2">DOB</label>
-                              <input type="date" name="drnumber" class="form-control" id="exampleInputtext2" placeholder="Enter Number" value="anuragh" >
+                              <input type="date" name="pdob" class="form-control" id="exampleInputtext2"  value="{{details.p_dob}}" >
                             </div></div></div>
                             <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
                                   <label for="exampleInputtext1">Age</label>
-                                  <input type="number" name="drname" class="form-control" id="exampleInputtext1" placeholder="Enter Name" value="25" >
+                                  <input type="number" name="page" class="form-control" id="exampleInputtext1" value="{{details.p_age}}" >
                                 </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Gender</label>
                               <br>
-                                <input type="radio" name="gender" value="male" >Male
-                                <input type="radio" name="gender" value="male" >Female
+                              {% if details.p_gender == 'male' %}
+                              <input type="radio" name="pgender" value="male"  checked >Male
+                              <input type="radio" name="pgender" value="female" >Female
+      
+                            {% else %}
+                            <input type="radio" name="pgender" value="male"  >Male
+                            <input type="radio" name="pgender" value="female" checked >Female
+                            {% endif %}
                                
                               </div>
                         </div>
@@ -190,7 +190,7 @@
                       </div>
                       <div class="modal-footer justify-content-between">
                         
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary" name="save">Save changes</button>
                       </div>
                     </div>
                     <!-- /.modal-content -->
