@@ -14,19 +14,19 @@ def login(request):
                 username=ausername, password=apassword)
             
             if userdetail.status == '2':
-                request.session['user_id'] = userdetail.id
+                request.session['user_name'] = userdetail.username
                 return redirect('addashdoc')
             if userdetail.status == '3':
-                request.session['user_id'] = userdetail.id
+                request.session['user_name'] = userdetail.username
                 return redirect('addashpat')
             if userdetail.status == '4':
-                request.session['user_id'] = userdetail.id
+                request.session['user_name'] = userdetail.username
                 return redirect('addashlab')
             if userdetail.status == '5':
-                request.session['user_id'] = userdetail.id
+                request.session['user_name'] = userdetail.username
                 return redirect('addashpha')
             if userdetail.status == '6':
-                request.session['user_id'] = userdetail.id
+                request.session['user_name'] = userdetail.username
                 return redirect('addashbld')
 
         else:

@@ -34,14 +34,15 @@
                     <div class="col-sm-12">
                         <!-- select -->
                         <div class="form-group">
-                          {% for i in doc %}
+                        
                           <select class="form-control" name="drname">
                             <option disabled selected>Doctor </option>
+                            {% for i in doc %}
                             <option value="{{i.id}}">{{i.d_name}} - {{i.d_department}}</option>
                             
-                            
+                            {% endfor %}
                           </select>
-                          {% endfor %}
+                          
                         </div>
                       </div>
                     
