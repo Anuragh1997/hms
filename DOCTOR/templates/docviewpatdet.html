@@ -1,4 +1,4 @@
-{% extends 'phamaster.html' %}
+{% extends 'docmaster.html' %}
 {% block content %}
 {% load static %}
 <div class="content-wrapper">
@@ -27,7 +27,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm">
+              <form id="quickForm" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-6">
@@ -92,11 +93,41 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                 
-                  <a href="{% url 'viewprepat' %}" type="button" class="btn btn-info">View reports</a>
+                    <a href="{% url 'docpalab' %}" type="button" class="btn btn-primary">Lab reports</a>
+                    <a href="{% url 'docpapres' %}" type="button" class="btn btn-info">Prescriptions</a>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-xl">Add Prescription</button>
                   
                 </div>
-           
+                <div class="modal fade" id="modal-xl">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Add </h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card-body">
+                            <div class="form-group">
+                              <label for="exampleInputtext1">Add Prescription</label>
+                              <textarea style="width:100%" >sdgfdsfgfdh</textarea>
+                            </div>
+                            
+                         
+                           
+                            
+                          </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                          
+                          <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
               </form>
             </div>
             <!-- /.card -->

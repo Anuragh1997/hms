@@ -1,6 +1,9 @@
+from tokenize import group
 from django.shortcuts import render,redirect
 from DOCTOR.decorates import auth_login
 from ADMIN.models import login_det, bloodbank_det
+from .models import donor_det,bldrec_det
+from datetime import datetime
 
 # Create your views here.
 @auth_login
@@ -33,24 +36,76 @@ def bldview(request):
                     else:
                               msg='current password is invalid'
      return render(request,'bloodview.html',{'details':blood,'err':msg})
-
+@auth_login
 def addblddonor(request):
+     now = datetime.now()
+     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+     if request.method == 'POST':
+        d_name = request.POST['bname']
+        d_mob = request.POST['bnumber']
+        d_group = request.POST['bgroup']
+        d_address = request.POST['baddress']
+        d_district = request.POST['bdis']
+        d_dob = request.POST['bdob']
+        d_age = request.POST['bage']
+        d_gender = request.POST['bgender']
+        donor = donor_det(do_name=d_name, do_mob=d_mob, do_group=d_group,
+                            do_address=d_address, do_district=d_district, do_dob=d_dob, do_age=d_age, do_gender=d_gender,do_datetime=dt_string)
+        
+        donor.save()
+       
      return render(request,'blooddonor.html')
-
+@auth_login
 def bdonorlist(request):
-     return render(request,'blooddonorlist.html')
+     donorlist=donor_det.objects.all()
+     return render(request,'blooddonorlist.html',{'list':donorlist,})
+@auth_login
+def bdonorview(request,id):
+     now = datetime.now()
+     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+     donor=donor_det.objects.get(id=id)
+     if request.method == 'POST':
+          if 'del' in request.POST:
+               donor.delete()              
+               return redirect('bldlist')
+          if 'save' in request.POST:
+               d_name = request.POST['bname']
+               d_mob = request.POST['bnumber']
+               d_group = request.POST['bgroup']
+               d_address = request.POST['baddress']
+               d_district = request.POST['bdis']
+               d_dob = request.POST['bdob']
+               d_age = request.POST['bage']
+               d_gender = request.POST['bgender']
+               donor_det.objects.filter(id=donor.id).update(do_name=d_name, do_mob=d_mob, do_group=d_group,
+                            do_address=d_address, do_district=d_district, do_dob=d_dob, do_age=d_age, do_gender=d_gender)
+               return redirect('/bld/donorview/%d'%id)
+          if 'add' in request.POST:
+               bd_date = request.POST['badd']
+               group=donor.do_group
+               received = bldrec_det(do_id_id=id, db_group=group,
+                            db_date=bd_date,db_datetime=dt_string)
+              
+               received.save()
+               return redirect('/bld/donorview/%d'%id)
 
-def bdonorview(request):
-     return render(request,'blooddonorview.html')
+     return render(request,'blooddonorview.html',{'details':donor})
 
 def bldreq(request):
      return render(request,'bloodrequest1.html')
 
 def breqview(request):
      return render(request,'bloodrequestview1.html')
+@auth_login
+def bldreclist(request):
+      reclist=bldrec_det.objects.all()
+      if request.method == 'POST':
+            delid = request.POST['did']
+            list=bldrec_det.objects.get(id=delid)
+            list.delete()       
+            return redirect('bldrec')
 
-def bldreqlist(request):
-     return render(request,'bloodreclist.html')
+      return render(request,'bloodreclist.html',{'list':reclist,})
 
 def bldelivered(request):
      return render(request,'blooddellist.html')

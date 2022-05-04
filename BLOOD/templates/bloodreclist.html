@@ -23,10 +23,14 @@
             <div class="card">
             
               <!-- /.card-header -->
+              <form id="quickForm" action="" method="POST">
+                {% csrf_token %}
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>Sl no</th>
+                    <th> no</th>
                     <th>Donor Name</th>
                     <th>Mobile</th>
                     <th>Group</th>
@@ -36,35 +40,29 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>A+</td>
-                    <td>1</td>
-                    <td>10/03/1997</td>
-                   <td><button class="btn btn-danger">Delete</button></td> 
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>A+</td>
-                    <td>1</td>
-                    <td>10/03/1997</td>
-                   <td><button class="btn btn-danger">Delete</button></td> 
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>A+</td>
-                    <td>1</td>
-                    <td>10/03/1997</td>
-                   <td><button class="btn btn-danger">Delete</button></td> 
-                  </tr>
+                    {% for i in list %}
+                    <tr>
+                      <td>{{ forloop.counter}}</td>
+                      <td>{{i.id}}</td>
+                      <td>{{i.do_id.do_name}}</td>
+                      <td>{{i.do_id.do_mob}}</td>
+                      <td>{{i.do_id.do_group}}</td>
+                      <td>{{i.db_unit}}</td>
+                      <td>{{i.db_date}}</td>
+                     
+                     <td><input type="hidden" value="{{i.id}}" name="did"><button type="submit" class="btn btn-danger">Delete</button></td> 
+                    
+                     
+                    </tr>
+                    
+                    {% endfor %}
+                 
                   
                   </tbody>
                   
                 </table>
               </div>
+              </form>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->

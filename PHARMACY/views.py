@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from DOCTOR.decorates import auth_login
-from ADMIN.models import login_det, pharmacy_det
+from ADMIN.models import login_det, pharmacy_det,patient_det
 
 # Create your views here.
 @auth_login
@@ -34,12 +34,14 @@ def pharmacyview123(request):
                   else:
                          msg='current password is invalid'
      return render(request,'phaview.html',{'details':pharmacy,'err':msg})
-
+@auth_login
 def viewpatient(request):
-     return render(request,'phaviewpatlist.html')
-
-def viewpatientdet(request):
-     return render(request,'phaviewpatdet.html')
+     patientlist=patient_det.objects.all()
+     return render(request,'phaviewpatlist.html',{'list':patientlist,})
+@auth_login
+def viewpatientdet(request,id):
+     patient=patient_det.objects.get(id=id)
+     return render(request,'phaviewpatdet.html',{'details':patient})
 
 def preslist(request):
      return render(request,'phaviewppres.html')

@@ -52,14 +52,15 @@
                     <div class="col-sm-12">
                         <!-- select -->
                         <div class="form-group">
-                          {% for i in pat %}
+                          
                           <select class="form-control">
                             <option disabled selected>Patient </option>
+                            {% for i in pat %}
                             <option value="{{i.id}}">{{i.p_name}} - {{i.p_mob}}</option>
-                            
+                            {% endfor %}
                             
                           </select>
-                          {% endfor %}
+                          
                         </div>
                       </div>
                     

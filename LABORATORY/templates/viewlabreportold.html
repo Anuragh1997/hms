@@ -36,33 +36,19 @@
                   </tr>
                   </thead>
                   <tbody>
+                    {% for i in list %}
                   <tr>
+                    <td>{{i.r_name}}</td>
+                    <td>{{i.r_path}}</td>
+                    <td>{{i.r_date}}</td>
                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
-                    
                    <td><a href="{% url 'lbviwrold' %}" type="button" class="btn btn-primary">View</a></td> 
                   </tr>
-                  <tr>
-                   
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'lbviwrold' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'lbviwrold' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  
+                  {% endfor %}
                   
                   </tbody>
+                
+                 
                   
                 </table>
               </div>

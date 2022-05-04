@@ -27,8 +27,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Lab Name</th>
-                    <th>Number</th>
+                    
                     <th>Patient Name</th>
                     <th>Patient Number</th>
                     <th>Report Name</th>
@@ -39,40 +38,16 @@
                   </tr>
                   </thead>
                   <tbody>
+                    {% for i in list %}
                   <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'lbviwrpde' %}" type="button" class="btn btn-primary">View</a></td> 
+                    <td>{{i.p_id.p_name}}</td>
+                    <td>{{i.p_id.p_mob}}</td>
+                    <td>{{i.r_name}}</td>
+                    <td>{{i.r_path}}</td>
+                    <td>{{i.r_date}}</td>
+                   <td><a href="{% url 'lbviwrpde' i.id %}" type="button" class="btn btn-primary">View</a></td> 
                   </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'lbviwrpde' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'lbviwrpde' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  
+                  {% endfor %}
                   
                   </tbody>
                   

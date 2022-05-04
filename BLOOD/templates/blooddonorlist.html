@@ -27,40 +27,30 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>Sl no</th>
                     <th>Name</th>
                     <th>Mobile</th>
-                    <th>Email</th>
+                    <th>Group</th>
                     <th>Address</th>
                     <th>District</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
+                    {% for i in list %}
                   <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>Calicut</td>
-                    <td>kozhikode</td>
-                   <td><a href="{% url 'blddv' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>Calicut</td>
-                    <td>kozhikode</td>
-                   <td><a href="{% url 'blddv' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>Calicut</td>
-                    <td>kozhikode</td>
-                   <td><a href="{% url 'blddv' %}" type="button" class="btn btn-primary">View</a></td> 
+                    <td>{{ forloop.counter}}</td>
+                    <td>{{i.do_name}}</td>
+                    <td>{{i.do_mob}}</td>
+                    <td>{{i.do_group}}</td>
+                    <td>{{i.do_address}}</td>
+                    <td>{{i.do_district}}</td>
+                   <td><a href="{% url 'blddv' i.id %}" type="submit" class="btn btn-primary">View</a></td> 
+                   
                   </tr>
                   
+                  {% endfor %}
+                 
                   </tbody>
                   
                 </table>

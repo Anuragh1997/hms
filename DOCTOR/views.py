@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from DOCTOR.decorates import auth_login
-from ADMIN.models import login_det, doctor_det
+from ADMIN.models import login_det, doctor_det,patient_det
 
 # Create your views here.
 @auth_login
@@ -58,10 +58,14 @@ def dviewlabdet(request):
 
 def dviewpresdet(request):
      return render(request,'docviewpresdetail.html')
-
+@auth_login
 def dviewpatient(request):
-     return render(request,'docviewpat.html')
-
+     patientlist=patient_det.objects.all()
+     return render(request,'docviewpat.html',{'list':patientlist,})
+@auth_login
+def dovviewpatdet(request,id):
+     patient=patient_det.objects.get(id=id)
+     return render(request,'docviewpatdet.html',{'details':patient,})
 def dviewprescription1(request):
      return render(request,'docviewpres1.html')
      
