@@ -62,14 +62,22 @@ def labviewreport(request):
 @auth_login
 def labviewrede(request,id):
      report=report_det.objects.get(id=id)
+     if request.method == 'POST':
+            report.delete()       
+            return redirect('lbviwrp')
      return render(request,'viewlabreportsdetail.html',{'details':report})
 
 def labviewrept(request,id):
      report=report_det.objects.filter(p_id=id,r_addedby=request.session['user_name'])
      return render(request,'viewlabreportold.html',{'list':report})
      
-def labviewreold(request):
-     return render(request,'viewlabreportoldview.html')
+def labviewreold(request,id):
+     report=report_det.objects.get(id=id)
+    
+     if request.method == 'POST':
+            report.delete()     
+            return redirect('/lab/labviewrepat/%d'%report.p_id_id)
+     return render(request,'viewlabreportoldview.html',{'details':report})
 def llogout(request):
     del request.session['user_name']
     request.session.flush()

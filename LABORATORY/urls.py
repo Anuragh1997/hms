@@ -10,7 +10,7 @@ urlpatterns = [
     path('labviewreport',views.labviewreport,name="lbviwrp"),
     path('labviewreportdetail/<int:id>',views.labviewrede,name="lbviwrpde"),
     path('labviewrepat/<int:id>',views.labviewrept,name="lbviwrpt"),
-    path('labviewold',views.labviewreold,name="lbviwrold"),
+    path('labviewold/<int:id>',views.labviewreold,name="lbviwrold"),
     path('log_out',views.llogout,name="lgout")
     
     

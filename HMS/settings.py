@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'LOGIN',
     'PATIENT',
     'PHARMACY',
-    'BLOOD'
+    'BLOOD',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

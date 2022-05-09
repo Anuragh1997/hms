@@ -27,20 +27,21 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm">
+              <form id="quickForm" action="" method="POST">
+                {% csrf_token %}
                 <div class="card-body">
                     
                     <div class="form-group">
                       <label for="exampleInputtext1">Patient Name</label>
-                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" disabled>
+                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="{{details.p_id.p_name}}" disabled>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputtext2">Patient Number</label>
-                      <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" value="9048798538" disabled>
+                      <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" value="{{details.p_id.p_mob}}" disabled>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputtext1"> Prescription</label>
-                      <textarea style="width:100%" disabled>sdgfdsfgfdh</textarea>
+                      <textarea style="width:100%" disabled>{{details.pres}}</textarea>
                      
                     </div>
                    
@@ -51,7 +52,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-xl">Edit</button>
-                  <button type="submit" class="btn btn-danger">Delete</button>
+                  <button type="submit" class="btn btn-danger" name="del">Delete</button>
                   
                   
                  
@@ -69,7 +70,7 @@
                           <div class="card-body">
                             <div class="form-group">
                               <label for="exampleInputtext1">Edit Prescription</label>
-                              <textarea style="width:100%" >sdgfdsfgfdh</textarea>
+                              <textarea style="width:100%" name="pres" >{{details.pres}}</textarea>
                             </div>
                             
                          
@@ -79,7 +80,7 @@
                         </div>
                         <div class="modal-footer justify-content-between">
                           
-                          <button type="button" class="btn btn-primary">Save</button>
+                          <button type="submit" class="btn btn-primary" name="save">Save</button>
                         </div>
                       </div>
                       <!-- /.modal-content -->

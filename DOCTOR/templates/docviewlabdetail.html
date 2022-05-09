@@ -27,26 +27,29 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm">
-                <div class="card-body">
-                   
-                    <div class="form-group">
-                      <label for="exampleInputtext1"> Name</label>
-                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" disabled>
-                    </div>
-                    <div class="form-group">
+             
+                <form id="quickForm" action="" method="POST">
+                  {% csrf_token %}
+                  <div class="card-body">
+                     
+                      <div class="form-group">
+                        <label for="exampleInputtext1">Report Name</label>
+                        <input type="text"  class="form-control" id="exampleInputtext1"  value="{{details.r_name}}" disabled>
+                      </div>
+                      <div class="form-group">
                         <label for="exampleInputtext1">Date</label>
-                        <input type="date" name="drname" class="form-control" id="exampleInputtext1" disabled >
+                        <input type="date"  class="form-control" id="exampleInputtext1" value="{{details.r_date}}" disabled>
                       </div>
                       
-                    <div class="form-group">
-                      <label for="exampleInputtext1"> File</label>
-                      <iframe src="file_name.pdf" style="width: 100%;height: 100%;border: none;"></iframe>
-                    </div>
-                  
-                  
+                      <div class="form-group">
+                        <label for="exampleInputtext1"> File</label>
+                        <a href="{{details.r_path.url}}" target="_blank">Download File</a>
+                        
+                      </div>
                     
-                  </div>
+                    
+                      
+                    </div>
                 <!-- /.card-body -->
                
                 

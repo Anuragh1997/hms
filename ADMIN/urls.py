@@ -29,6 +29,7 @@ urlpatterns = [
     path('viewpharre',views.viewphre,name="viewpresdetailed"),
     path('viewblood/<int:id>',views.viewbld,name="viewbld"),
     path('logout',views.adminlogout,name="log_out"),
-    path('checkuser',views.drcheck,name="check_dr")
+    path('checkuser',views.drcheck,name="check_dr"),
+    path('test',views.hometest,name="testing")
     
 ]

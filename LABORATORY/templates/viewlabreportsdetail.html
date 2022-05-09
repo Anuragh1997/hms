@@ -27,7 +27,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm">
+              <form id="quickForm" action="" method="POST">
+                {% csrf_token %}
                 <div class="card-body">
                     <div class="form-group">
                       <label for="exampleInputtext1">Patient Name</label>
@@ -48,8 +49,8 @@
                     
                     <div class="form-group">
                       <label for="exampleInputtext1"> File</label>
-                      <img src="{{details.r_path.url}}" alt="avatar" height="80px" width="80px" >
-                      <iframe src="{{details.r_path.url}}" style="width: 100%;height: 100%;border: none;"></iframe>
+                      <a href="{{details.r_path.url}}" target="_blank">Download File</a>
+                      
                     </div>
                   
                   

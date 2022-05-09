@@ -1,8 +1,11 @@
+from email import message
 from django.shortcuts import render, redirect
 from .decorates import auth_login
 from . models import login_det, doctor_det,patient_det,lab_det,pharmacy_det,bloodbank_det
 from datetime import datetime
-from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from django.http import JsonResponse,HttpResponse
 # Create your views here.
 
 
@@ -292,6 +295,11 @@ def adminlogout(request):
 
 def drcheck(request):
     dusername = request.POST['dremail']
-    userexist = doctor_det.objects.filter(d_username=dusername).exists()
+    userexist = login_det.objects.filter(username=dusername).exists()
 
     return JsonResponse({'status': userexist, })
+
+@api_view(['GET'])
+def hometest(request):
+    message="congratzzz"
+    return Response(message)

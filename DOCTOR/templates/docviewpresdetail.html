@@ -32,16 +32,16 @@
                    
                     <div class="form-group">
                       <label for="exampleInputtext1"> Dr Name</label>
-                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" disabled>
+                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="{{details.d_id.d_name}}" disabled>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputtext1">Date</label>
-                        <input type="date" name="drname" class="form-control" id="exampleInputtext1" disabled >
+                        <input type="text" name="drname" class="form-control" id="exampleInputtext1" value="{{details.datetime}}" disabled >
                       </div>
                       
                     <div class="form-group">
                       <label for="exampleInputtext1"> File</label>
-                      <textarea style="width:100%" disabled>sdgfdsfgfdh</textarea>
+                      <textarea style="width:100%" disabled>{{details.pres}}</textarea>
                       
                     </div>
                   

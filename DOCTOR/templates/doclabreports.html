@@ -26,43 +26,27 @@
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
-                  <tr>
+                    <tr>
+                      
+                      <th>Report Name</th>
+                      <th>File</th>
+                      <th>Date</th>
                     
-                    <th>Report Name</th>
-                    <th>File</th>
-                    <th>Date</th>
-                  
-                    <th>Action</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                   
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
+                      <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      {% for i in list %}
+                    <tr>
+                      <td>{{i.r_name}}</td>
+                      <td>{{i.r_path}}</td>
+                      <td>{{i.r_date}}</td>
+                     
+                     <td><a href="{% url 'docpapdet' i.id %}" type="button" class="btn btn-primary">View</a></td> 
+                    </tr>
+                    {% endfor %}
                     
-                   <td><a href="{% url 'docpapdet' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                   
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'docpapdet' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'docpapdet' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  
-                  
-                  </tbody>
+                    </tbody>
                   
                 </table>
               </div>

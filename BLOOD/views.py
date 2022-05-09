@@ -99,6 +99,7 @@ def breqview(request):
 @auth_login
 def bldreclist(request):
       reclist=bldrec_det.objects.all()
+      
       if request.method == 'POST':
             delid = request.POST['did']
             list=bldrec_det.objects.get(id=delid)

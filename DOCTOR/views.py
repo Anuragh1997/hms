@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
 from DOCTOR.decorates import auth_login
 from ADMIN.models import login_det, doctor_det,patient_det
+from .models import prescription_det
+from LABORATORY.models import report_det
+from datetime import datetime
 
 # Create your views here.
 @auth_login
@@ -40,24 +43,29 @@ def doctorview(request):
                   else:
                          msg='current password is invalid'
      return render(request,'docview.html',{'details':doctor,'err':msg})
-
+@auth_login
 def docviewapp(request):
      return render(request,'docviewapp.html')
-
+@auth_login
 def dovviewappdet(request):
      return render(request,'docviewappdet.html')
+@auth_login
+def dviewlab(request,id):
+     reports=report_det.objects.filter(p_id_id=id)
 
-def dviewlab(request):
-     return render(request,'doclabreports.html')
-
-def dviewpres(request):
-     return render(request,'docviewpres.html')
-
-def dviewlabdet(request):
-     return render(request,'docviewlabdetail.html')
-
-def dviewpresdet(request):
-     return render(request,'docviewpresdetail.html')
+     return render(request,'doclabreports.html',{'list':reports,})
+@auth_login
+def dviewpres(request,id):
+     pres=prescription_det.objects.filter(p_id_id=id)
+     return render(request,'docviewpres.html',{'list':pres,})
+@auth_login
+def dviewlabdet(request,id):
+     report=report_det.objects.get(id=id)
+     return render(request,'docviewlabdetail.html',{'details':report})
+@auth_login
+def dviewpresdet(request,id):
+     pres=prescription_det.objects.get(id=id)
+     return render(request,'docviewpresdetail.html',{'details':pres})
 @auth_login
 def dviewpatient(request):
      patientlist=patient_det.objects.all()
@@ -65,12 +73,35 @@ def dviewpatient(request):
 @auth_login
 def dovviewpatdet(request,id):
      patient=patient_det.objects.get(id=id)
+     patientid=patient.id
+     details=doctor_det.objects.get(d_username=request.session['user_name'])
+     doc=details.id
+     now = datetime.now()
+     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+     if request.method == 'POST':
+          pr = request.POST['pres']
+          prescription = prescription_det(p_id_id=patientid, d_id_id=doc, pres=pr,datetime=dt_string)
+          prescription.save()  
+          return redirect('/doc/viewpatdet/%d'%id) 
+          
      return render(request,'docviewpatdet.html',{'details':patient,})
+@auth_login
 def dviewprescription1(request):
-     return render(request,'docviewpres1.html')
-     
-def dviewpresdetail1(request):
-     return render(request,'docviewpresdet1.html')
+     details=doctor_det.objects.get(d_username=request.session['user_name'])
+     doc=details.id
+     pres=prescription_det.objects.filter(d_id_id=doc)
+     return render(request,'docviewpres1.html',{'list':pres,})
+@auth_login    
+def dviewpresdetail1(request,id):
+     pres=prescription_det.objects.get(id=id)
+     if 'del' in request.POST:
+          pres.delete()
+          return redirect('docpres')
+     if 'save' in request.POST:
+          pr = request.POST['pres']
+          prescription_det.objects.filter(id=id).update(pres=pr)
+          return redirect('/doc/viewpresdet/%d'%id)
+     return render(request,'docviewpresdet1.html',{'details':pres})
 def logout(request):
     del request.session['user_name']
     request.session.flush()

@@ -23,8 +23,7 @@
             <div class="card">
             
               <!-- /.card-header -->
-              <form id="quickForm" action="" method="POST">
-                {% csrf_token %}
+              
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
@@ -37,11 +36,16 @@
                     <th>Unit</th>
                     <th>Date</th>
                     <th>Action</th>
+                   
+                   
                   </tr>
                   </thead>
                   <tbody>
                     {% for i in list %}
+                   
                     <tr>
+                      <form  action="" method="POST">
+                        {% csrf_token %}
                       <td>{{ forloop.counter}}</td>
                       <td>{{i.id}}</td>
                       <td>{{i.do_id.do_name}}</td>
@@ -49,12 +53,14 @@
                       <td>{{i.do_id.do_group}}</td>
                       <td>{{i.db_unit}}</td>
                       <td>{{i.db_date}}</td>
-                     
-                     <td><input type="hidden" value="{{i.id}}" name="did"><button type="submit" class="btn btn-danger">Delete</button></td> 
+                      <td><input type="submit" class="btn btn-danger" value="Delete">
+                        <input type="hidden" name="did" value="{{i.id}}" id="">
+                    </td> 
                     
-                     
+                    
+                  </form>
                     </tr>
-                    
+                
                     {% endfor %}
                  
                   
@@ -62,7 +68,7 @@
                   
                 </table>
               </div>
-              </form>
+             
               <!-- /.card-body -->
             </div>
             <!-- /.card -->

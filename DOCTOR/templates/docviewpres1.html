@@ -27,7 +27,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                   
+                    <th>Sl no</th>
                     <th>Patient Name</th>
                     <th>Patient Number</th>
                     <th>Prescription</th>
@@ -39,45 +39,30 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
+                    {% for i in list %}
                    
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
+                    <tr>
+                     
+                      <td>{{ forloop.counter}}</td>
+                      <td>{{i.p_id.p_name}}</td>
+                      <td>{{i.p_id.p_mob}}</td>
+                      <td>{{i.pres}}</td>
+                      <td>{{i.status}}</td>
+                      <td>{{i.datetime}}</td>
+                     
+                      <td><a href="{% url 'docpresdet1' i.id %}" type="button" class="btn btn-primary">View</a>
+                        
+                    </td> 
                     
-                   <td><a href="{% url 'docpresdet1' %}" type="button" class="btn btn-primary">View</a>
-                <button class="btn btn-danger">Delete</button></td> 
-                  </tr>
-                  <tr>
-                   
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
                     
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'docpresdet1' %}" type="button" class="btn btn-primary">View</a>
-                    <button class="btn btn-danger">Delete</button></td> 
-                  </tr>
-                  <tr>
-                   
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'docpresdet1' %}" type="button" class="btn btn-primary">View</a>
-                    <button class="btn btn-danger">Delete</button>
-                </td> 
-                  </tr>
-                  
+                
+                    </tr>
+                
+                    {% endfor %}
+                 
                   
                   </tbody>
+                
                   
                 </table>
               </div>

@@ -27,7 +27,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action="" method="POST" enctype="multipart/form-data">
+              <form id="quickForm" action="" method="POST" >
                 {% csrf_token %}
                 <div class="card-body">
                   <div class="row">
@@ -93,8 +93,8 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <a href="{% url 'docpalab' %}" type="button" class="btn btn-primary">Lab reports</a>
-                    <a href="{% url 'docpapres' %}" type="button" class="btn btn-info">Prescriptions</a>
+                    <a href="{% url 'docpalab' details.id %}" type="button" class="btn btn-primary">Lab reports</a>
+                    <a href="{% url 'docpapres' details.id %}" type="button" class="btn btn-info">Prescriptions</a>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-xl">Add Prescription</button>
                   
                 </div>
@@ -111,7 +111,7 @@
                           <div class="card-body">
                             <div class="form-group">
                               <label for="exampleInputtext1">Add Prescription</label>
-                              <textarea style="width:100%" >sdgfdsfgfdh</textarea>
+                              <textarea style="width:100%" name="pres" ></textarea>
                             </div>
                             
                          
@@ -121,7 +121,7 @@
                         </div>
                         <div class="modal-footer justify-content-between">
                           
-                          <button type="button" class="btn btn-primary">Save</button>
+                          <button type="submit" class="btn btn-primary" >Save</button>
                         </div>
                       </div>
                       <!-- /.modal-content -->
