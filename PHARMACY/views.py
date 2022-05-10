@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from DOCTOR.decorates import auth_login
 from ADMIN.models import login_det, pharmacy_det,patient_det
+from DOCTOR.models import prescription_det
 
 # Create your views here.
 @auth_login
@@ -42,15 +43,21 @@ def viewpatient(request):
 def viewpatientdet(request,id):
      patient=patient_det.objects.get(id=id)
      return render(request,'phaviewpatdet.html',{'details':patient})
-
+@auth_login
 def preslist(request):
-     return render(request,'phaviewppres.html')
-
-def presdetailview(request):
-     return render(request,'phaviewppresdet.html')
-     
-def viewprespatient(request):
-     return render(request,'phaviewpprespat.html')
+     pres=prescription_det.objects.all()
+     return render(request,'phaviewppres.html',{'list':pres,})
+@auth_login
+def presdetailview(request,id):
+     pres=prescription_det.objects.get(id=id)
+     if request.method == 'POST':
+          prescription_det.objects.filter(id=id).update(status='Deliverd')
+          return redirect('viewpres')
+     return render(request,'phaviewppresdet.html',{'details':pres}) 
+@auth_login
+def viewprespatient(request,id):
+     pres=prescription_det.objects.filter(p_id_id=id)
+     return render(request,'phaviewpprespat.html',{'list':pres,})
 def phlogout(request):
     del request.session['user_name']
     request.session.flush()

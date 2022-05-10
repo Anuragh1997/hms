@@ -28,50 +28,23 @@
                   <thead>
                   <tr>
                     <th>Dr Name</th>
-                    <th>Number</th>
-                    
                     <th>Prescription</th>
-                    <th>Status</th>
-                   
                     <th>Date</th>
+                    <th>Status</th>
                   
                     
                   </tr>
                   </thead>
                   <tbody>
+                    {% for i in list %}
                   <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
-                    
+                    <td>{{i.d_id.d_name}}</td>
+                    <td>{{i.pres}}</td>
+                    <td>{{i.datetime}}</td>
+                    <td>{{i.status}}</td>
                    
                   </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    
-                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
-                    
-                   
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                   
-                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
-                    
-                   
-                  </tr>
-                  
+                  {% endfor %}
                   
                   </tbody>
                   

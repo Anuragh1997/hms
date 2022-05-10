@@ -29,26 +29,32 @@
               <!-- form start -->
               <form id="quickForm">
                 <div class="card-body">
-                    <div class="form-group">
-                      <label for="exampleInputtext1">Patient Name</label>
-                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" >
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputtext2">Patient Number</label>
-                      <input type="number" name="drnumber" class="form-control" id="exampleInputtext2" value="9048798538" >
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputtext1"> Name</label>
-                      <input type="text" name="drname" class="form-control" id="exampleInputtext1"  value="Anuragh" >
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputtext1"> File</label>
-                      <iframe src="file_name.pdf" style="width: 100%;height: 100%;border: none;"></iframe>
-                    </div>
+                  <div class="form-group">
+                    <label for="exampleInputtext1">Patient Name</label>
+                    <input type="text" class="form-control" id="exampleInputtext1"  value="{{details.p_id.p_name}}" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputtext2">Patient Number</label>
+                    <input type="number"  class="form-control" id="exampleInputtext2" value="{{details.p_id.p_mob}}"disabled >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputtext1">Report Name</label>
+                    <input type="text"  class="form-control" id="exampleInputtext1"  value="{{details.r_name}}" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputtext1">Date</label>
+                    <input type="date"  class="form-control" id="exampleInputtext1" value="{{details.r_date}}" disabled>
+                  </div>
                   
-                  
+                  <div class="form-group">
+                    <label for="exampleInputtext1"> File</label>
+                    <a href="{{details.r_path.url}}" target="_blank">Download File</a>
                     
                   </div>
+                
+                
+                  
+                </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                  

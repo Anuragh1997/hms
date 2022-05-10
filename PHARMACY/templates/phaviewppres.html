@@ -40,44 +40,22 @@
                   </tr>
                   </thead>
                   <tbody>
+                    {% for i in list %}
                   <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'viewpresdet' %}" type="button" class="btn btn-primary">View</a></td> 
+                    <td>{{i.d_id.d_name}}</td>
+                    <td>{{i.d_id.d_mob}}</td>
+                    <td>{{i.p_id.p_name}}</td>
+                    <td>{{i.p_id.p_mob}}</td>
+                    <td>{{i.pres}}</td>
+                    <td>{{i.status}}</td>
+                    <td>{{i.datetime}}</td>
+                    <td><a href="{% url 'viewpresdet' i.id %}" type="button" class="btn btn-primary">View</a></td> 
+                   
                   </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'viewpresdet' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  <tr>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    <td>Anuragh</td>
-                    <td>9048798538</td>
-                    
-                    <td>anuraghnnair@gmail.com</td>
-                    <td><span class="badge bg-danger">Pending</span></td>
-                    <td>20/45/47</td>
-                    
-                   <td><a href="{% url 'viewpresdet' %}" type="button" class="btn btn-primary">View</a></td> 
-                  </tr>
-                  
+                  {% endfor %}
                   
                   </tbody>
+                 
                   
                 </table>
               </div>

@@ -6,6 +6,8 @@ from datetime import datetime
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.http import JsonResponse,HttpResponse
+from LABORATORY.models import report_det
+from DOCTOR.models import prescription_det
 # Create your views here.
 
 
@@ -120,7 +122,8 @@ def lablist(request):
 
 
 def labreport(request):
-    return render(request, 'labreports.html')
+    reportlist=report_det.objects.all()
+    return render(request, 'labreports.html',{'list':reportlist,})
 
 @auth_login
 def pharmacy(request):
@@ -145,7 +148,8 @@ def phalist(request):
 
 
 def prescription(request):
-    return render(request, 'preslist.html')
+    pres=prescription_det.objects.all()
+    return render(request, 'preslist.html',{'list':pres,})
 
 @auth_login
 def blood(request):
@@ -244,8 +248,9 @@ def viewlab(request,id):
     return render(request, 'viewlab.html',{'details':lab})
 
 
-def viewlabrep(request):
-    return render(request, 'viewlabreport.html')
+def viewlabrep(request,id):
+    report=report_det.objects.get(id=id)
+    return render(request, 'viewlabreport.html',{'details':report})
 
 @auth_login
 def viewpharmacy1(request,id):
@@ -265,8 +270,9 @@ def viewpharmacy1(request,id):
     return render(request, 'viewpharmacy1.html',{'details':pharmacy})
 
 
-def viewphre(request):
-    return render(request, 'viewphreport.html')
+def viewphre(request,id):
+    pres=prescription_det.objects.get(id=id)
+    return render(request, 'viewphreport.html',{'details':pres})
 
 @auth_login
 def viewbld(request,id):
